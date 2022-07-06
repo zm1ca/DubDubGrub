@@ -20,15 +20,19 @@ struct LocationMapView: View {
                 .ignoresSafeArea(.container, edges: .top)
             
             VStack {
-                Image("ddg-map-logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 70)
-                    .shadow(radius: 10)
-                
+                LogoView().shadow(radius: 10)
                 Spacer()
             }
         }
+    }
+}
+
+struct LogoView: View {
+    var body: some View {
+        Image("ddg-map-logo")
+            .resizable()
+            .scaledToFit()
+            .frame(height: 70)
     }
 }
 
@@ -38,3 +42,5 @@ struct LocationMapView_Previews: PreviewProvider {
             .previewDevice("iPhone 11 Pro")
     }
 }
+
+

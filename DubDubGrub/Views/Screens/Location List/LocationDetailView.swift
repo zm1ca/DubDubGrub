@@ -10,10 +10,7 @@ import SwiftUI
 struct LocationDetailView: View {
     var body: some View {
         VStack (spacing: 16) {
-            Image("default-banner-asset")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 120)
+            BannerView(imageName: "default-banner-asset")
             
             HStack {
                 Label("1 S Market St Ste 40", systemImage: "mappin.and.ellipse")
@@ -24,10 +21,7 @@ struct LocationDetailView: View {
             }
             .padding(.horizontal)
             
-            Text("It's Chipotle. Enough said. It's Chipotle. Enough said. It's Chipotle. Enough said. It's Chipotle. Enough said. It's Chipotle. Enough said. ")
-                .minimumScaleFactor(0.75)
-                .lineLimit(3)
-                .padding(.horizontal)
+            DescriptionView(text: "It's Chipotle. Enough said. It's Chipotle. Enough said. It's Chipotle. Enough said. It's Chipotle. Enough said. It's Chipotle. Enough said.")
             
             CapsuleView()
             
@@ -53,45 +47,61 @@ struct LocationDetailView: View {
     }
 }
 
-struct LocationDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        LocationDetailView()
-            .preferredColorScheme(.dark)
+
+//MARK: - Elements
+struct BannerView: View {
+    
+    let imageName: String
+    
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .scaledToFit()
+            .frame(height: 120)
     }
 }
 
+
+struct DescriptionView: View {
+    
+    let text: String
+    
+    var body: some View {
+        Text(text)
+            .minimumScaleFactor(0.75)
+            .lineLimit(3)
+            .padding(.horizontal)
+    }
+}
+
+
 struct CapsuleView: View {
     var body: some View {
-        ZStack {
-            Capsule()
-                .frame(height: 80)
-                .foregroundColor(Color(.secondarySystemBackground))
+        HStack (spacing: 20) {
+            Button  {
+                print("Location")
+            } label: {
+                LocationActionButton(imageName: "location.fill", color: .brandPrimary)
+            }
             
-            HStack (spacing: 20) {
-                Button  {
-                    print("Location")
-                } label: {
-                    LocationActionButton(imageName: "location.fill", color: .brandPrimary)
-                }
-                
-                Link(destination: URL(string: "https://www.apple.com")!) {
-                    LocationActionButton(imageName: "globe", color: .brandPrimary)
-                }
-                
-                Button  {
-                    print("Phone")
-                } label: {
-                    LocationActionButton(imageName: "phone.fill", color: .brandPrimary)
-                }
-                
-                Button  {
-                    print("Uncheck")
-                } label: {
-                    LocationActionButton(imageName: "person.fill.xmark", color: Color(.systemPink))
-                }
+            Link(destination: URL(string: "https://www.apple.com")!) {
+                LocationActionButton(imageName: "globe", color: .brandPrimary)
+            }
+            
+            Button  {
+                print("Phone")
+            } label: {
+                LocationActionButton(imageName: "phone.fill", color: .brandPrimary)
+            }
+            
+            Button  {
+                print("Uncheck")
+            } label: {
+                LocationActionButton(imageName: "person.fill.xmark", color: Color(.systemPink))
             }
         }
-        .padding(.horizontal)
+        .frame(width: 350, height: 80)
+        .background(Capsule().foregroundColor(Color(.secondarySystemBackground)))
     }
 }
 
@@ -132,3 +142,19 @@ struct FirstNameAvatarView: View {
     }
 }
  
+
+//MARK: - Preview
+struct LocationDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        LocationDetailView()
+            .previewDevice("iPhone 13 Pro Max")
+            .preferredColorScheme(.dark)
+        
+        LocationDetailView()
+            .previewDevice("iPhone 13 mini")
+            .preferredColorScheme(.dark)
+            .previewInterfaceOrientation(.portraitUpsideDown)
+    }
+}
+
+

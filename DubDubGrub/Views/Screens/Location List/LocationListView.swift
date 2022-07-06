@@ -24,20 +24,6 @@ struct LocationListView: View {
     }
 }
 
-
-struct AvatarView: View {
-    
-    let size: CGFloat
-    
-    var body: some View {
-        Image("default-avatar")
-            .resizable()
-            .scaledToFit()
-            .frame(width: size, height: size)
-            .clipShape(Circle())
-    }
-}
-
 struct LocationListView_Previews: PreviewProvider {
     static var previews: some View {
         LocationListView()

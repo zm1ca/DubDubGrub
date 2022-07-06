@@ -18,6 +18,11 @@
 		403BA92E2872FEF500F534AB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403BA92D2872FEF500F534AB /* ProfileView.swift */; };
 		4077BBB228733296006AD541 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBB128733296006AD541 /* LocationDetailView.swift */; };
 		4077BBB4287332BB006AD541 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBB3287332BB006AD541 /* LocationCell.swift */; };
+		4077BBB628757701006AD541 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBB528757701006AD541 /* AvatarView.swift */; };
+		4077BBB828757AC4006AD541 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBB728757AC4006AD541 /* CustomModifiers.swift */; };
+		4077BBBA28757AE9006AD541 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBB928757AE9006AD541 /* View+Ext.swift */; };
+		4077BBBC28757C9F006AD541 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBBB28757C9F006AD541 /* ProfileHeaderView.swift */; };
+		4077BBBE287580B4006AD541 /* DDGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBBD287580B4006AD541 /* DDGButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		403BA92D2872FEF500F534AB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4077BBB128733296006AD541 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		4077BBB3287332BB006AD541 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		4077BBB528757701006AD541 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		4077BBB728757AC4006AD541 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
+		4077BBB928757AE9006AD541 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		4077BBBB28757C9F006AD541 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		4077BBBD287580B4006AD541 /* DDGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,16 +78,11 @@
 		403BA9122872F6C800F534AB /* DubDubGrub */ = {
 			isa = PBXGroup;
 			children = (
+				403BA9172872F6CC00F534AB /* Assets.xcassets */,
 				403BA9212872F85D00F534AB /* DubDubGrub.entitlements */,
 				403BA9132872F6C800F534AB /* DubDubGrubApp.swift */,
-				403BA9272872FE6300F534AB /* AppTabView.swift */,
-				403BA9292872FEBF00F534AB /* LocationMapView.swift */,
-				403BA92B2872FEE400F534AB /* LocationListView.swift */,
-				4077BBB128733296006AD541 /* LocationDetailView.swift */,
-				4077BBB3287332BB006AD541 /* LocationCell.swift */,
-				403BA92D2872FEF500F534AB /* ProfileView.swift */,
-				403BA9252872FDE700F534AB /* Color+Ext.swift */,
-				403BA9172872F6CC00F534AB /* Assets.xcassets */,
+				4077BBBF28758486006AD541 /* Views */,
+				4077BBC0287584A3006AD541 /* Extensions */,
 				403BA9192872F6CC00F534AB /* Preview Content */,
 			);
 			path = DubDubGrub;
@@ -97,6 +102,80 @@
 				403BA9232872F87800F534AB /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4077BBBF28758486006AD541 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4077BBC1287584C7006AD541 /* Screens */,
+				4077BBC328758512006AD541 /* Custom Views */,
+				4077BBC228758508006AD541 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4077BBC0287584A3006AD541 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4077BBB728757AC4006AD541 /* CustomModifiers.swift */,
+				4077BBB928757AE9006AD541 /* View+Ext.swift */,
+				403BA9252872FDE700F534AB /* Color+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4077BBC1287584C7006AD541 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				403BA9272872FE6300F534AB /* AppTabView.swift */,
+				4077BBC42875853E006AD541 /* Location Map */,
+				4077BBC528758548006AD541 /* Location List */,
+				4077BBC628758559006AD541 /* Profile */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		4077BBC228758508006AD541 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4077BBB3287332BB006AD541 /* LocationCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4077BBC328758512006AD541 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				4077BBB528757701006AD541 /* AvatarView.swift */,
+				4077BBBD287580B4006AD541 /* DDGButton.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		4077BBC42875853E006AD541 /* Location Map */ = {
+			isa = PBXGroup;
+			children = (
+				403BA9292872FEBF00F534AB /* LocationMapView.swift */,
+			);
+			path = "Location Map";
+			sourceTree = "<group>";
+		};
+		4077BBC528758548006AD541 /* Location List */ = {
+			isa = PBXGroup;
+			children = (
+				403BA92B2872FEE400F534AB /* LocationListView.swift */,
+				4077BBB128733296006AD541 /* LocationDetailView.swift */,
+			);
+			path = "Location List";
+			sourceTree = "<group>";
+		};
+		4077BBC628758559006AD541 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				403BA92D2872FEF500F534AB /* ProfileView.swift */,
+				4077BBBB28757C9F006AD541 /* ProfileHeaderView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,10 +249,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				403BA9142872F6C800F534AB /* DubDubGrubApp.swift in Sources */,
+				4077BBB828757AC4006AD541 /* CustomModifiers.swift in Sources */,
 				403BA92A2872FEBF00F534AB /* LocationMapView.swift in Sources */,
+				4077BBB628757701006AD541 /* AvatarView.swift in Sources */,
+				4077BBBE287580B4006AD541 /* DDGButton.swift in Sources */,
 				403BA92C2872FEE400F534AB /* LocationListView.swift in Sources */,
 				4077BBB228733296006AD541 /* LocationDetailView.swift in Sources */,
 				4077BBB4287332BB006AD541 /* LocationCell.swift in Sources */,
+				4077BBBC28757C9F006AD541 /* ProfileHeaderView.swift in Sources */,
+				4077BBBA28757AE9006AD541 /* View+Ext.swift in Sources */,
 				403BA9282872FE6300F534AB /* AppTabView.swift in Sources */,
 				403BA92E2872FEF500F534AB /* ProfileView.swift in Sources */,
 				403BA9262872FDE700F534AB /* Color+Ext.swift in Sources */,
