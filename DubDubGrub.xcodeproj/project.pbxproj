@@ -24,6 +24,7 @@
 		4077BBBC28757C9F006AD541 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBBB28757C9F006AD541 /* ProfileHeaderView.swift */; };
 		4077BBBE287580B4006AD541 /* DDGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBBD287580B4006AD541 /* DDGButton.swift */; };
 		4077BBC92876BAC9006AD541 /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBC82876BAC9006AD541 /* DDGLocation.swift */; };
+		4077BBCB2876C606006AD541 /* DDGProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBCA2876C606006AD541 /* DDGProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		4077BBBB28757C9F006AD541 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		4077BBBD287580B4006AD541 /* DDGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGButton.swift; sourceTree = "<group>"; };
 		4077BBC82876BAC9006AD541 /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
+		4077BBCA2876C606006AD541 /* DDGProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				4077BBC82876BAC9006AD541 /* DDGLocation.swift */,
+				4077BBCA2876C606006AD541 /* DDGProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				403BA9142872F6C800F534AB /* DubDubGrubApp.swift in Sources */,
 				4077BBB828757AC4006AD541 /* CustomModifiers.swift in Sources */,
 				403BA92A2872FEBF00F534AB /* LocationMapView.swift in Sources */,
+				4077BBCB2876C606006AD541 /* DDGProfile.swift in Sources */,
 				4077BBB628757701006AD541 /* AvatarView.swift in Sources */,
 				4077BBBE287580B4006AD541 /* DDGButton.swift in Sources */,
 				403BA92C2872FEE400F534AB /* LocationListView.swift in Sources */,
