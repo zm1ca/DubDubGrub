@@ -7,7 +7,7 @@
 
 import CloudKit
 
-struct DDGLocation {
+struct DDGLocation: RecordInitiatable {
     
     static let kName        = "name"
     static let kDescription = "description"

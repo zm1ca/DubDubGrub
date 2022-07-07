@@ -7,7 +7,7 @@
 
 import CloudKit
 
-struct DDGProfile {
+struct DDGProfile: RecordInitiatable {
     
     static let kFirstName   = "firstName"
     static let kLastName    = "lastName"
