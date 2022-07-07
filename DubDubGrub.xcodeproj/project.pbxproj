@@ -25,6 +25,7 @@
 		4077BBBE287580B4006AD541 /* DDGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBBD287580B4006AD541 /* DDGButton.swift */; };
 		4077BBC92876BAC9006AD541 /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBC82876BAC9006AD541 /* DDGLocation.swift */; };
 		4077BBCB2876C606006AD541 /* DDGProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBCA2876C606006AD541 /* DDGProfile.swift */; };
+		4077BBCD2876C888006AD541 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBCC2876C888006AD541 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		4077BBBD287580B4006AD541 /* DDGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGButton.swift; sourceTree = "<group>"; };
 		4077BBC82876BAC9006AD541 /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
 		4077BBCA2876C606006AD541 /* DDGProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGProfile.swift; sourceTree = "<group>"; };
+		4077BBCC2876C888006AD541 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				4077BBC82876BAC9006AD541 /* DDGLocation.swift */,
 				4077BBCA2876C606006AD541 /* DDGProfile.swift */,
+				4077BBCC2876C888006AD541 /* MockData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				4077BBBC28757C9F006AD541 /* ProfileHeaderView.swift in Sources */,
 				4077BBBA28757AE9006AD541 /* View+Ext.swift in Sources */,
 				403BA9282872FE6300F534AB /* AppTabView.swift in Sources */,
+				4077BBCD2876C888006AD541 /* MockData.swift in Sources */,
 				403BA92E2872FEF500F534AB /* ProfileView.swift in Sources */,
 				403BA9262872FDE700F534AB /* Color+Ext.swift in Sources */,
 			);

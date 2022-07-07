@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct LocationDetailView: View {
+    
+    let location: DDGLocation
+    
     var body: some View {
         VStack (spacing: 16) {
             BannerView(imageName: "default-banner-asset")
             
             HStack {
-                Label("1 S Market St Ste 40", systemImage: "mappin.and.ellipse")
+                Label(location.address, systemImage: "mappin.and.ellipse")
                     .font(.caption)
                     .foregroundColor(.secondary)
                 
@@ -21,9 +24,9 @@ struct LocationDetailView: View {
             }
             .padding(.horizontal)
             
-            DescriptionView(text: "It's Chipotle. Enough said. It's Chipotle. Enough said. It's Chipotle. Enough said. It's Chipotle. Enough said. It's Chipotle. Enough said.")
+            DescriptionView(text: location.description)
             
-            CapsuleView()
+            CapsuleView(location: location)
             
             Text("Who's Here?")
                 .bold()
@@ -38,7 +41,7 @@ struct LocationDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Chipotle")
+        .navigationTitle(location.name)
         .toolbar(content: {
             Button("Dismiss") {
                 print("Dismiss")
@@ -59,7 +62,7 @@ struct BannerView: View {
             .scaledToFit()
             .frame(height: 120)
     }
-}
+} 
 
 
 struct DescriptionView: View {
@@ -76,6 +79,9 @@ struct DescriptionView: View {
 
 
 struct CapsuleView: View {
+    
+    let location: DDGLocation
+    
     var body: some View {
         HStack (spacing: 20) {
             Button  {
@@ -84,7 +90,7 @@ struct CapsuleView: View {
                 LocationActionButton(imageName: "location.fill", color: .brandPrimary)
             }
             
-            Link(destination: URL(string: "https://www.apple.com")!) {
+            Link(destination: URL(string: location.website)!) {
                 LocationActionButton(imageName: "globe", color: .brandPrimary)
             }
             
@@ -146,14 +152,13 @@ struct FirstNameAvatarView: View {
 //MARK: - Preview
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationDetailView()
+        LocationDetailView(location: DDGLocation(record: MockData.location))
             .previewDevice("iPhone 13 Pro Max")
             .preferredColorScheme(.dark)
         
-        LocationDetailView()
+        LocationDetailView(location: DDGLocation(record: MockData.location))
             .previewDevice("iPhone 13 mini")
             .preferredColorScheme(.dark)
-            .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }
 
