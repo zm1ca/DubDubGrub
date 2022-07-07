@@ -23,6 +23,7 @@
 		4077BBBA28757AE9006AD541 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBB928757AE9006AD541 /* View+Ext.swift */; };
 		4077BBBC28757C9F006AD541 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBBB28757C9F006AD541 /* ProfileHeaderView.swift */; };
 		4077BBBE287580B4006AD541 /* DDGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBBD287580B4006AD541 /* DDGButton.swift */; };
+		4077BBC92876BAC9006AD541 /* DDGLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077BBC82876BAC9006AD541 /* DDGLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4077BBB928757AE9006AD541 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		4077BBBB28757C9F006AD541 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		4077BBBD287580B4006AD541 /* DDGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGButton.swift; sourceTree = "<group>"; };
+		4077BBC82876BAC9006AD541 /* DDGLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDGLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				403BA9172872F6CC00F534AB /* Assets.xcassets */,
 				403BA9212872F85D00F534AB /* DubDubGrub.entitlements */,
 				403BA9132872F6C800F534AB /* DubDubGrubApp.swift */,
+				4077BBC72876BAB7006AD541 /* Model */,
 				4077BBBF28758486006AD541 /* Views */,
 				4077BBC0287584A3006AD541 /* Extensions */,
 				403BA9192872F6CC00F534AB /* Preview Content */,
@@ -178,6 +181,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		4077BBC72876BAB7006AD541 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4077BBC82876BAC9006AD541 /* DDGLocation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,6 +265,7 @@
 				4077BBB628757701006AD541 /* AvatarView.swift in Sources */,
 				4077BBBE287580B4006AD541 /* DDGButton.swift in Sources */,
 				403BA92C2872FEE400F534AB /* LocationListView.swift in Sources */,
+				4077BBC92876BAC9006AD541 /* DDGLocation.swift in Sources */,
 				4077BBB228733296006AD541 /* LocationDetailView.swift in Sources */,
 				4077BBB4287332BB006AD541 /* LocationCell.swift in Sources */,
 				4077BBBC28757C9F006AD541 /* ProfileHeaderView.swift in Sources */,
