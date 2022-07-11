@@ -31,6 +31,8 @@
 		4084968628772DB600A02396 /* CKRecord+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084968528772DB600A02396 /* CKRecord+Ext.swift */; };
 		4084968828772E1200A02396 /* RecordInitiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084968728772E1200A02396 /* RecordInitiatable.swift */; };
 		4084968A28782D6300A02396 /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084968928782D6300A02396 /* AlertItem.swift */; };
+		4084968C28783E6600A02396 /* LocationMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084968B28783E6600A02396 /* LocationMapViewModel.swift */; };
+		4084968F2878441100A02396 /* LocationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084968E2878441100A02396 /* LocationsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		4084968528772DB600A02396 /* CKRecord+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKRecord+Ext.swift"; sourceTree = "<group>"; };
 		4084968728772E1200A02396 /* RecordInitiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInitiatable.swift; sourceTree = "<group>"; };
 		4084968928782D6300A02396 /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
+		4084968B28783E6600A02396 /* LocationMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapViewModel.swift; sourceTree = "<group>"; };
+		4084968E2878441100A02396 /* LocationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +81,7 @@
 		4015AD2C2877158300E392F3 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				4015AD2D2877159400E392F3 /* CloudKitManager.swift */,
+				4084968D2878440500A02396 /* Managers */,
 				40849683287725EF00A02396 /* Constants.swift */,
 				4084968928782D6300A02396 /* AlertItem.swift */,
 			);
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				403BA9292872FEBF00F534AB /* LocationMapView.swift */,
+				4084968B28783E6600A02396 /* LocationMapViewModel.swift */,
 			);
 			path = "Location Map";
 			sourceTree = "<group>";
@@ -216,6 +221,15 @@
 				4084968728772E1200A02396 /* RecordInitiatable.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4084968D2878440500A02396 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4015AD2D2877159400E392F3 /* CloudKitManager.swift */,
+				4084968E2878441100A02396 /* LocationsManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +302,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4084968C28783E6600A02396 /* LocationMapViewModel.swift in Sources */,
 				403BA9142872F6C800F534AB /* DubDubGrubApp.swift in Sources */,
+				4084968F2878441100A02396 /* LocationsManager.swift in Sources */,
 				4077BBB828757AC4006AD541 /* CustomModifiers.swift in Sources */,
 				403BA92A2872FEBF00F534AB /* LocationMapView.swift in Sources */,
 				4077BBCB2876C606006AD541 /* DDGProfile.swift in Sources */,
