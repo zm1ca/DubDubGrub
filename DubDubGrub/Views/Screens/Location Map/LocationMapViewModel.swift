@@ -15,18 +15,17 @@ final class LocationMapViewModel: ObservableObject {
                                                                           longitudeDelta: 0.01))
     @Published var alertItem: AlertItem?
     
-    @Published var locations: [DDGLocation] = []
     
     func getLocations(for locationsManager: LocationsManager) {
-        CloudKitManager.getLocations { [self] result in
-            switch result {
-            case .success(let locations):
-                DispatchQueue.main.async {
-                    self.locations = locations
+        CloudKitManager.getLocations { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let locations):
+                    locationsManager.locations = locations
+                    print(locations)
+                case .failure(_):
+                    self.alertItem = AlertContext.unableToGetLocations
                 }
-                print(locations)
-            case .failure(_):
-                alertItem = AlertContext.unableToGetLocations
             }
         }
     }

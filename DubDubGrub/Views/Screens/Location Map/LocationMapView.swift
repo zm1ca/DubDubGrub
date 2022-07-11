@@ -15,8 +15,11 @@ struct LocationMapView: View {
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $viewModel.region)
-                .ignoresSafeArea(.container, edges: .top)
+            Map(coordinateRegion: $viewModel.region,
+                annotationItems: locationsManager.locations) { location in
+                MapMarker(coordinate: location.location.coordinate, tint: .brandPrimary)
+            }
+            .ignoresSafeArea(.container, edges: .top)
             
             VStack {
                 LogoView().shadow(radius: 10)
@@ -27,7 +30,9 @@ struct LocationMapView: View {
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
         })
         .onAppear {
-            viewModel.getLocations(for: locationsManager)
+            if locationsManager.locations.isEmpty {
+                viewModel.getLocations(for: locationsManager)
+            }
         }
     }
 } 

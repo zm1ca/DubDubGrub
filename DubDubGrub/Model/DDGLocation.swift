@@ -7,7 +7,7 @@
 
 import CloudKit
 
-struct DDGLocation: RecordInitiatable {
+struct DDGLocation: RecordInitiatable, Identifiable {
     
     static let kName        = "name"
     static let kDescription = "description"
@@ -18,7 +18,7 @@ struct DDGLocation: RecordInitiatable {
     static let kWebsite     = "website"
     static let kPhone       = "phone"
     
-    let ckRecordID: CKRecord.ID
+    let id: CKRecord.ID
     let name: String
     let description: String
     let squareAsset: CKAsset!
@@ -29,7 +29,7 @@ struct DDGLocation: RecordInitiatable {
     let phone: String
     
     init(record: CKRecord) {
-        ckRecordID  = record.recordID
+        id          = record.recordID
         name        = record[DDGLocation.kName] as? String ?? "N/A"
         description = record[DDGLocation.kDescription] as? String ?? "N/A"
         squareAsset = record[DDGLocation.kSquareAsset] as? CKAsset
