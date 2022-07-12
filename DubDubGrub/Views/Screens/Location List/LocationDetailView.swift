@@ -13,7 +13,7 @@ struct LocationDetailView: View {
     
     var body: some View {
         VStack (spacing: 16) {
-            BannerView(imageName: "default-banner-asset")
+            BannerView(image: location.createBannerImage())
             
             HStack {
                 Label(location.address, systemImage: "mappin.and.ellipse")
@@ -54,10 +54,10 @@ struct LocationDetailView: View {
 //MARK: - Elements
 struct BannerView: View {
     
-    let imageName: String
+    let image: UIImage
     
     var body: some View {
-        Image(imageName)
+        Image(uiImage: image)
             .resizable()
             .scaledToFit()
             .frame(height: 120)

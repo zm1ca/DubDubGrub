@@ -33,6 +33,7 @@
 		4084968A28782D6300A02396 /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084968928782D6300A02396 /* AlertItem.swift */; };
 		4084968C28783E6600A02396 /* LocationMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084968B28783E6600A02396 /* LocationMapViewModel.swift */; };
 		4084968F2878441100A02396 /* LocationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084968E2878441100A02396 /* LocationsManager.swift */; };
+		40E613FE287C25D000AB7891 /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		4084968928782D6300A02396 /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		4084968B28783E6600A02396 /* LocationMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapViewModel.swift; sourceTree = "<group>"; };
 		4084968E2878441100A02396 /* LocationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsManager.swift; sourceTree = "<group>"; };
+		40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				4077BBB928757AE9006AD541 /* View+Ext.swift */,
 				403BA9252872FDE700F534AB /* Color+Ext.swift */,
 				4084968528772DB600A02396 /* CKRecord+Ext.swift */,
+				40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				4077BBC92876BAC9006AD541 /* DDGLocation.swift in Sources */,
 				4077BBB228733296006AD541 /* LocationDetailView.swift in Sources */,
 				4077BBB4287332BB006AD541 /* LocationCell.swift in Sources */,
+				40E613FE287C25D000AB7891 /* CKAsset+Ext.swift in Sources */,
 				4084968828772E1200A02396 /* RecordInitiatable.swift in Sources */,
 				4077BBBC28757C9F006AD541 /* ProfileHeaderView.swift in Sources */,
 				4077BBBA28757AE9006AD541 /* View+Ext.swift in Sources */,
