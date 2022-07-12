@@ -22,7 +22,6 @@ final class LocationMapViewModel: ObservableObject {
                 switch result {
                 case .success(let locations):
                     locationsManager.locations = locations
-                    print(locations)
                 case .failure(_):
                     self.alertItem = AlertContext.unableToGetLocations
                 }

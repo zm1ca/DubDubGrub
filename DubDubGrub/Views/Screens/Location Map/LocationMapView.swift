@@ -15,7 +15,7 @@ struct LocationMapView: View {
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $viewModel.region,
+            Map(coordinateRegion: $viewModel.region, showsUserLocation: true,
                 annotationItems: locationsManager.locations) { location in
                 MapMarker(coordinate: location.location.coordinate, tint: .brandPrimary)
             }
