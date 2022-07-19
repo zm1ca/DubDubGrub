@@ -13,11 +13,13 @@ struct ProfileView: View {
     @State private var lastName     = ""
     @State private var companyName  = ""
     @State private var bio          = ""
+    @State private var avatar       = PlaceholderImage.avatar
+    @State private var isShowingPhotoPicker = false
     
     
     var body: some View {
         VStack (spacing: 16) {
-            ProfileHeaderView(firstName: $firstName, lastName: $lastName, companyName: $companyName)
+            ProfileHeaderView(firstName: $firstName, lastName: $lastName, companyName: $companyName, avatar: $avatar, isShowingPhotoPicker: $isShowingPhotoPicker)
                 .frame(height: 130)
                 .padding(.horizontal)
             
@@ -54,6 +56,9 @@ struct ProfileView: View {
             }
         }
         .navigationTitle("Profile")
+        .sheet(isPresented: $isShowingPhotoPicker) {
+            PhotoPicker(image: $avatar)
+        }
     }
 }
 

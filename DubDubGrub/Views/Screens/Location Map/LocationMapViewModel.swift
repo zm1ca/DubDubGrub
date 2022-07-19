@@ -28,7 +28,6 @@ final class LocationMapViewModel: NSObject, ObservableObject  {
         if !hasSeenOnboardingView {
             isShowingOnboardingView = true
             UserDefaults.standard.set(true, forKey: kHasSeenOnboardingView)
-            print("defaults SET")
         } else {
             checkIfLocationServicesAreEnabled()
         }

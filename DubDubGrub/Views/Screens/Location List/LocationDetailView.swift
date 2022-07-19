@@ -26,7 +26,7 @@ struct LocationDetailView: View {
             
             DescriptionView(text: location.description)
             
-            CapsuleView(location: location)
+            CapsuleView(location: location) 
             
             Text("Who's Here?")
                 .bold()
@@ -35,7 +35,7 @@ struct LocationDetailView: View {
             ScrollView {
                 LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
                     ForEach (0..<12) { item in
-                        FirstNameAvatarView(firstName: "Karikiteya1")
+                        FirstNameAvatarView(firstName: "Karikiteya1", image: PlaceholderImage.avatar)
                     }
                 }
             }
@@ -136,10 +136,11 @@ struct LocationActionButton: View {
 struct FirstNameAvatarView: View {
     
     let firstName: String
+    let image: UIImage
     
     var body: some View {
         VStack {
-            AvatarView(size: 64)
+            AvatarView(size: 64, image: image)
             Text(firstName)
                 .bold()
                 .lineLimit(1)

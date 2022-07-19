@@ -36,6 +36,7 @@
 		4084968F2878441100A02396 /* LocationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084968E2878441100A02396 /* LocationsManager.swift */; };
 		40D3BA75287EC2DB00696E80 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3BA74287EC2DB00696E80 /* OnboardingView.swift */; };
 		40D3BA77287EC35500696E80 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3BA76287EC35500696E80 /* LogoView.swift */; };
+		40DBEE182886F3F000382925 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBEE172886F3F000382925 /* PhotoPicker.swift */; };
 		40E613FE287C25D000AB7891 /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		40D3BA72287DE13100696E80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		40D3BA74287EC2DB00696E80 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		40D3BA76287EC35500696E80 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		40DBEE172886F3F000382925 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 		4077BBC328758512006AD541 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				40DBEE162886F3B700382925 /* UIKit Components */,
 				4077BBB528757701006AD541 /* AvatarView.swift */,
 				4077BBBD287580B4006AD541 /* DDGButton.swift */,
 				40D3BA76287EC35500696E80 /* LogoView.swift */,
@@ -252,6 +255,14 @@
 				40D3BA74287EC2DB00696E80 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		40DBEE162886F3B700382925 /* UIKit Components */ = {
+			isa = PBXGroup;
+			children = (
+				40DBEE172886F3F000382925 /* PhotoPicker.swift */,
+			);
+			path = "UIKit Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40DBEE182886F3F000382925 /* PhotoPicker.swift in Sources */,
 				4084968C28783E6600A02396 /* LocationMapViewModel.swift in Sources */,
 				403BA9142872F6C800F534AB /* DubDubGrubApp.swift in Sources */,
 				4084968F2878441100A02396 /* LocationsManager.swift in Sources */,
