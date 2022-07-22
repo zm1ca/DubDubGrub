@@ -38,6 +38,7 @@
 		40D3BA77287EC35500696E80 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3BA76287EC35500696E80 /* LogoView.swift */; };
 		40DBEE182886F3F000382925 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBEE172886F3F000382925 /* PhotoPicker.swift */; };
 		40E613FE287C25D000AB7891 /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */; };
+		40F8CC6428894F7E00A1F84E /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8CC6328894F7E00A1F84E /* UIImage+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		40D3BA76287EC35500696E80 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		40DBEE172886F3F000382925 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
+		40F8CC6328894F7E00A1F84E /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				403BA9252872FDE700F534AB /* Color+Ext.swift */,
 				4084968528772DB600A02396 /* CKRecord+Ext.swift */,
 				40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */,
+				40F8CC6328894F7E00A1F84E /* UIImage+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				40E613FE287C25D000AB7891 /* CKAsset+Ext.swift in Sources */,
 				4084968828772E1200A02396 /* RecordInitiatable.swift in Sources */,
 				4077BBBC28757C9F006AD541 /* ProfileHeaderView.swift in Sources */,
+				40F8CC6428894F7E00A1F84E /* UIImage+Ext.swift in Sources */,
 				4077BBBA28757AE9006AD541 /* View+Ext.swift in Sources */,
 				40D3BA75287EC2DB00696E80 /* OnboardingView.swift in Sources */,
 				403BA9282872FE6300F534AB /* AppTabView.swift in Sources */,
