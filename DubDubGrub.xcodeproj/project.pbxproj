@@ -39,6 +39,7 @@
 		40DBEE182886F3F000382925 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBEE172886F3F000382925 /* PhotoPicker.swift */; };
 		40E613FE287C25D000AB7891 /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */; };
 		40F8CC6428894F7E00A1F84E /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8CC6328894F7E00A1F84E /* UIImage+Ext.swift */; };
+		40F8CC66288E712700A1F84E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8CC65288E712700A1F84E /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		40DBEE172886F3F000382925 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
 		40F8CC6328894F7E00A1F84E /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		40F8CC65288E712700A1F84E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 			children = (
 				403BA92D2872FEF500F534AB /* ProfileView.swift */,
 				4077BBBB28757C9F006AD541 /* ProfileHeaderView.swift */,
+				40F8CC65288E712700A1F84E /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				40D3BA75287EC2DB00696E80 /* OnboardingView.swift in Sources */,
 				403BA9282872FE6300F534AB /* AppTabView.swift in Sources */,
 				4077BBCD2876C888006AD541 /* MockData.swift in Sources */,
+				40F8CC66288E712700A1F84E /* ProfileViewModel.swift in Sources */,
 				403BA92E2872FEF500F534AB /* ProfileView.swift in Sources */,
 				403BA9262872FDE700F534AB /* Color+Ext.swift in Sources */,
 				401454D6288163CC003641E3 /* XDismissButtonView.swift in Sources */,

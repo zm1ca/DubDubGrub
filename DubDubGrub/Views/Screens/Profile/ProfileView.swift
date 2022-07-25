@@ -10,23 +10,20 @@ import CloudKit
 
 struct ProfileView: View {
     
-    @State private var firstName    = ""
-    @State private var lastName     = ""
-    @State private var companyName  = ""
-    @State private var bio          = ""
-    @State private var avatar       = PlaceholderImage.avatar
-    @State private var isShowingPhotoPicker = false
-    @State private var alertItem: AlertItem?
-    
-    
+    @StateObject private var viewModel = ProfileViewModel()
+
     var body: some View {
         VStack (spacing: 16) {
-            ProfileHeaderView(firstName: $firstName, lastName: $lastName, companyName: $companyName, avatar: $avatar, isShowingPhotoPicker: $isShowingPhotoPicker)
+            ProfileHeaderView(firstName: $viewModel.firstName,
+                              lastName: $viewModel.lastName,
+                              companyName: $viewModel.companyName,
+                              avatar: $viewModel.avatar,
+                              isShowingPhotoPicker: $viewModel.isShowingPhotoPicker)
                 .frame(height: 130)
                 .padding(.horizontal)
             
             HStack {
-                CharactersRemainView(currentCount: bio.count)
+                CharactersRemainView(currentCount: viewModel.bio.count)
                 
                 Spacer()
                 
@@ -42,7 +39,7 @@ struct ProfileView: View {
             }
             .padding(.horizontal)
             
-            TextEditor(text: $bio)
+            TextEditor(text: $viewModel.bio)
                 .accentColor(.brandPrimary)
                 .frame(height: 100)
                 .overlay(RoundedRectangle(cornerRadius: 8)
@@ -67,107 +64,12 @@ struct ProfileView: View {
             }
 
         }
-        .onAppear { getProfile() }
-        .alert(item: $alertItem) { alertItem in
+        .onAppear { viewModel.getProfile() }
+        .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
         }
-        .sheet(isPresented: $isShowingPhotoPicker) {
-            PhotoPicker(image: $avatar)
-        }
-    }
-    
-    func isValidProfile() -> Bool {
-        guard !firstName.isEmpty,
-              !lastName.isEmpty,
-              !companyName.isEmpty,
-              !bio.isEmpty,
-              avatar != PlaceholderImage.avatar,
-              bio.count < 100 else { return false }
-
-        
-        return true
-    }
-    
-    func createProfile() {
-        guard isValidProfile() else {
-            alertItem = AlertContext.invalidProfile
-            return
-        }
-        
-        // create CKRecord from Profile View
-        let profileRecord = CKRecord(recordType: RecordType.profile)
-        profileRecord[DDGProfile.kFirstName]   = firstName
-        profileRecord[DDGProfile.kLastName]    = lastName
-        profileRecord[DDGProfile.kBio]         = bio
-        profileRecord[DDGProfile.kCompanyName] = companyName
-        profileRecord[DDGProfile.kAvatar]      = avatar.convertToCKAsset()
-        
-        // get user id from container
-        CKContainer.default().fetchUserRecordID { recordID, error in
-            guard let recordID = recordID, error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            // get userRecord from PublicDatabase
-            CKContainer.default().publicCloudDatabase.fetch(withRecordID: recordID) { userRecord, error in
-                guard let userRecord = userRecord, error == nil else {
-                    print(error!.localizedDescription)
-                    return
-                }
-                
-                // create reference on UserRecord to DDGProfile we created
-                userRecord["userProfile"] = CKRecord.Reference(recordID: profileRecord.recordID, action: .none)
-                
-                // create CKOperation to save our User and Profile Records
-                let operation = CKModifyRecordsOperation(recordsToSave: [userRecord, profileRecord])
-                operation.modifyRecordsCompletionBlock = { savedRecords, _, error in
-                    guard let savedRecords = savedRecords, error == nil else {
-                        print(error!.localizedDescription)
-                        return
-                    }
-                    
-                    print(savedRecords)
-                }
-                
-                CKContainer.default().publicCloudDatabase.add(operation)
-            }
-        }
-    }
-    
-    
-    func getProfile() {
-        CKContainer.default().fetchUserRecordID { recordID, error in
-            guard let recordID = recordID, error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            CKContainer.default().publicCloudDatabase.fetch(withRecordID: recordID) { userRecord, error in
-                guard let userRecord = userRecord, error == nil else {
-                    print(error!.localizedDescription)
-                    return
-                }
-                
-                let profileReference = userRecord["userProfile"] as! CKRecord.Reference
-                let profileRecordID = profileReference.recordID
-                
-                CKContainer.default().publicCloudDatabase.fetch(withRecordID: profileRecordID) { profileRecord, error in
-                    guard let profileRecord = profileRecord, error == nil else {
-                        print(error!.localizedDescription)
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        let profile = DDGProfile(record: profileRecord)
-                        firstName   = profile.firstName
-                        lastName    = profile.lastName
-                        companyName = profile.companyName
-                        bio         = profile.bio
-                        avatar      = profile.createAvatarImage() //unsafe
-                    }
-                }
-            }
+        .sheet(isPresented: $viewModel.isShowingPhotoPicker) {
+            PhotoPicker(image: $viewModel.avatar)
         }
     }
 }
