@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AppTabView: View {
+struct AppTabView: View { 
     var body: some View {
         TabView {
             LocationMapView()
