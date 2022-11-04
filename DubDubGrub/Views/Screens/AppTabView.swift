@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AppTabView: View { 
+struct AppTabView: View {
     var body: some View {
         TabView {
             LocationMapView()
@@ -34,6 +34,7 @@ struct AppTabView: View {
 struct AppTabView_Previews: PreviewProvider {
     static var previews: some View {
         AppTabView()
+            .environmentObject(LocationsManager())
             .previewDevice("iPhone 11 Pro")
     }
 }

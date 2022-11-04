@@ -59,7 +59,7 @@ struct BannerView: View {
     var body: some View {
         Image(uiImage: image)
             .resizable()
-            .scaledToFit()
+            .scaledToFill()
             .frame(height: 120)
     }
 } 
@@ -73,6 +73,7 @@ struct DescriptionView: View {
         Text(text)
             .minimumScaleFactor(0.75)
             .lineLimit(3)
+            .frame(height: 70)
             .padding(.horizontal)
     }
 }
@@ -153,13 +154,11 @@ struct FirstNameAvatarView: View {
 //MARK: - Preview
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationDetailView(location: DDGLocation(record: MockData.location))
-            .previewDevice("iPhone 13 Pro Max")
-            .preferredColorScheme(.dark)
-        
-        LocationDetailView(location: DDGLocation(record: MockData.location))
-            .previewDevice("iPhone 13 mini")
-            .preferredColorScheme(.dark)
+        NavigationView {
+            LocationDetailView(location: DDGLocation(record: MockData.location))
+                .previewDevice("iPhone 13 Pro Max")
+                .preferredColorScheme(.dark)
+        }
     }
 }
 

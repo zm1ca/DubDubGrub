@@ -24,10 +24,9 @@ struct CloudKitManager {
                     case .success(let record):
                         locations.append(record.convertToModel())
                     case .failure(let error):
-                        completed(.failure(error)) // is that desired behavior?
+                        completed(.failure(error))
                     }
                 }
-                
                 completed(.success(locations))
             case .failure(let error):
                 completed(.failure(error))

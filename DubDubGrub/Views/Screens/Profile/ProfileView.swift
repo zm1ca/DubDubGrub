@@ -44,7 +44,7 @@ struct ProfileView: View {
                 .frame(height: 100)
                 .overlay(RoundedRectangle(cornerRadius: 8)
                             .stroke(.white, lineWidth: 1))
-                .padding(.horizontal)
+                .padding(.horizontal, 20)
 
             Spacer()
             
@@ -111,6 +111,7 @@ struct ProfileView_Previews: PreviewProvider {
         NavigationView {
             ProfileView()
         }
+        .environmentObject(LocationsManager())
         .preferredColorScheme(.dark)
         .previewDevice("iPhone 11 Pro")
     }

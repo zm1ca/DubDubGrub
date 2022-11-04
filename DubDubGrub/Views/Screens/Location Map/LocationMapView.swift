@@ -46,6 +46,7 @@ struct LocationMapView: View {
 struct LocationMapView_Previews: PreviewProvider {
     static var previews: some View {
         LocationMapView()
+            .environmentObject(LocationsManager())
             .previewDevice("iPhone 11 Pro")
     }
 }
