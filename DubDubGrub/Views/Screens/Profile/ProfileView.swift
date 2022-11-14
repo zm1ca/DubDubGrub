@@ -49,7 +49,7 @@ struct ProfileView: View {
             Spacer()
             
             Button {
-                //createProfile()
+                viewModel.createProfile()
             } label: {
                 DDGButton(title: "Create Profile")
             }
@@ -62,14 +62,14 @@ struct ProfileView: View {
             } label: {
                 Image(systemName: "keyboard.chevron.compact.down")
             }
-
-        }
+        } //TODO: Hide this button when keyboard isn't presented 
         .onAppear { viewModel.getProfile() }
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
         }
         .sheet(isPresented: $viewModel.isShowingPhotoPicker) {
             PhotoPicker(image: $viewModel.avatar)
+                .ignoresSafeArea(.all)
         }
     }
 }

@@ -27,7 +27,8 @@ struct LocationMapView: View {
                 Spacer()
             } 
         }
-        .sheet(isPresented: $viewModel.isShowingOnboardingView, onDismiss: viewModel.checkIfLocationServicesAreEnabled) {
+        .sheet(isPresented: $viewModel.isShowingOnboardingView,
+               onDismiss: viewModel.checkIfLocationServicesAreEnabled) {
             OnboardingView(isShowingOnboaringView: $viewModel.isShowingOnboardingView)
         }
         .alert(item: $viewModel.alertItem) { alertItem in

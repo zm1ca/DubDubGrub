@@ -26,6 +26,7 @@ struct OnboardingView: View {
             Spacer()
             
             LogoView(frameWidth: 250)
+                .padding(.bottom)
             
             VStack (alignment: .leading, spacing: 24) {
                 OnboardingTipView(imageSystemName: "building.2.crop.circle",

@@ -34,11 +34,13 @@ final class LocationMapViewModel: NSObject, ObservableObject  {
     }
     
     func checkIfLocationServicesAreEnabled() {
-        if CLLocationManager.locationServicesEnabled() {
-            deviceLocationManager = CLLocationManager()
-            deviceLocationManager!.delegate = self
-        } else {
-            alertItem = AlertContext.locationDisabled
+        DispatchQueue.global().async { [self] in
+            if CLLocationManager.locationServicesEnabled() {
+                deviceLocationManager = CLLocationManager()
+                deviceLocationManager!.delegate = self
+            } else {
+                alertItem = AlertContext.locationDisabled
+            }
         }
     }
     
@@ -59,7 +61,7 @@ final class LocationMapViewModel: NSObject, ObservableObject  {
     }
     
     func getLocations(for locationsManager: LocationsManager) {
-        CloudKitManager.getLocations { result in
+        CloudKitManager.shared.getLocations { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let locations):
