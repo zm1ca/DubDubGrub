@@ -11,49 +11,53 @@ import CloudKit
 struct ProfileView: View {
     
     @StateObject private var viewModel = ProfileViewModel()
-
+    
     var body: some View {
-        VStack (spacing: 16) {
-            ProfileHeaderView(firstName: $viewModel.firstName,
-                              lastName: $viewModel.lastName,
-                              companyName: $viewModel.companyName,
-                              avatar: $viewModel.avatar,
-                              isShowingPhotoPicker: $viewModel.isShowingPhotoPicker)
+        ZStack {
+            VStack (spacing: 16) {
+                ProfileHeaderView(firstName: $viewModel.firstName,
+                                  lastName: $viewModel.lastName,
+                                  companyName: $viewModel.companyName,
+                                  avatar: $viewModel.avatar,
+                                  isShowingPhotoPicker: $viewModel.isShowingPhotoPicker)
                 .frame(height: 130)
                 .padding(.horizontal)
-            
-            HStack {
-                CharactersRemainView(currentCount: viewModel.bio.count)
+                
+                HStack {
+                    CharactersRemainView(currentCount: viewModel.bio.count)
+                    
+                    Spacer()
+                    
+                    Button {
+                        print("Check Out")
+                    } label: {
+                        Label("Check Out", systemImage: "mappin.and.ellipse")
+                            .frame(width: 140, height: 28)
+                            .background(Color(.systemPink))
+                            .cornerRadius(8)
+                            .foregroundColor(.white)
+                    }
+                }
+                .padding(.horizontal)
+                
+                TextEditor(text: $viewModel.bio)
+                    .accentColor(.brandPrimary)
+                    .frame(height: 100)
+                    .overlay(RoundedRectangle(cornerRadius: 8)
+                        .stroke(.white, lineWidth: 1))
+                    .padding(.horizontal, 20)
                 
                 Spacer()
                 
                 Button {
-                    print("Check Out")
+                    viewModel.createProfile()
                 } label: {
-                    Label("Check Out", systemImage: "mappin.and.ellipse")
-                        .frame(width: 140, height: 28)
-                        .background(Color(.systemPink))
-                        .cornerRadius(8)
-                        .foregroundColor(.white)
+                    DDGButton(title: "Create Profile")
                 }
+                .padding(.bottom)
             }
-            .padding(.horizontal)
             
-            TextEditor(text: $viewModel.bio)
-                .accentColor(.brandPrimary)
-                .frame(height: 100)
-                .overlay(RoundedRectangle(cornerRadius: 8)
-                            .stroke(.white, lineWidth: 1))
-                .padding(.horizontal, 20)
-
-            Spacer()
-            
-            Button {
-                viewModel.createProfile()
-            } label: {
-                DDGButton(title: "Create Profile")
-            }
-            .padding(.bottom)
+            if viewModel.isLoading { LoadingView() }
         }
         .navigationTitle("Profile")
         .toolbar {
@@ -62,7 +66,7 @@ struct ProfileView: View {
             } label: {
                 Image(systemName: "keyboard.chevron.compact.down")
             }
-        } //TODO: Hide this button when keyboard isn't presented 
+        } //TODO: Hide this button when keyboard isn't presented
         .onAppear { viewModel.getProfile() }
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)

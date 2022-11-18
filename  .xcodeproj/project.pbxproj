@@ -40,6 +40,7 @@
 		40E613FE287C25D000AB7891 /* CKAsset+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */; };
 		40F8CC6428894F7E00A1F84E /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8CC6328894F7E00A1F84E /* UIImage+Ext.swift */; };
 		40F8CC66288E712700A1F84E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F8CC65288E712700A1F84E /* ProfileViewModel.swift */; };
+		5E61A12D29276544008D4D3C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61A12C29276544008D4D3C /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		40E613FD287C25D000AB7891 /* CKAsset+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKAsset+Ext.swift"; sourceTree = "<group>"; };
 		40F8CC6328894F7E00A1F84E /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		40F8CC65288E712700A1F84E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		5E61A12C29276544008D4D3C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				4077BBBD287580B4006AD541 /* DDGButton.swift */,
 				40D3BA76287EC35500696E80 /* LogoView.swift */,
 				401454D5288163CC003641E3 /* XDismissButtonView.swift */,
+				5E61A12C29276544008D4D3C /* LoadingView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				403BA9262872FDE700F534AB /* Color+Ext.swift in Sources */,
 				401454D6288163CC003641E3 /* XDismissButtonView.swift in Sources */,
 				40849684287725EF00A02396 /* Constants.swift in Sources */,
+				5E61A12D29276544008D4D3C /* LoadingView.swift in Sources */,
 				4084968628772DB600A02396 /* CKRecord+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
